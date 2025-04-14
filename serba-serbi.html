@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lain Lain - Cerita Ulang Tahun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #cce3f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .background-pattern {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-image: url('foto/bghias.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .title {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2em;
+      color: #000;
+      margin: 20px 10px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .content-section {
+      display: grid;
+      gap: 20px;
+      padding: 0 20px;
+      z-index: 2;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-family: 'Fredoka', sans-serif;
+      margin-bottom: 10px;
+      color: #000;
+      font-size: 1.3em;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+
+    .image-row img {
+      width: 100px;
+      border-radius: 10px;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-pattern"></div>
+
+  <h1 class="title">Halaman Lainnya yang Lebih Personal</h1>
+
+  <div class="content-section">
+    <div class="card">
+      <h2>Hobi Unik</h2>
+      <div class="image-row">
+        <img src="foto/hobi1.png" alt="Hobi 1">
+      </div>
+      <p>Ternyata hobi kamu tuh out of the box! Dari luar nggak kelihatan, tapi setelah kenal lebih dekat, bikin orang geleng-geleng kepala.</p>
+    </div>
+
+    <div class="card">
+      <h2>Kebiasaan Lucu</h2>
+      <div class="image-row">
+        <img src="foto/kebiasaan1.png" alt="Kebiasaan 1">
+        <img src="foto/kebiasaan1.png" alt="Kebiasaan 1">
+      </div>
+      <p>Kebiasaan kecil ini bikin orang sekitar senyum-senyum sendiri. Simple, tapi bikin suasana jadi lebih hidup.</p>
+    </div>
+  </div>
+
+</body>
+</html>

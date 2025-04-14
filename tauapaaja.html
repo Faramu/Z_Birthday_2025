@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tau Apa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #cce3f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .background-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('foto/bghias.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .title {
+      margin: 30px 20px 10px;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2em;
+      color: #000;
+      text-align: center;
+      z-index: 2;
+      word-wrap: break-word;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 15px 20px;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    .card h2 {
+      text-align: center;
+      font-family: 'Fredoka', sans-serif;
+      margin: 10px 0 15px;
+      font-size: 1.3em;
+      color: #000;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+
+    .scroll-container img {
+      width: 120px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .color-swatches div {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .color-black { background-color: #000000; }
+    .color-gray { background-color: #7a7a7a; }
+    .color-redwine { background-color: #6c2d3b; }
+    .color-darkbrown { background-color: #3a1f0a; }
+    .color-darkblue { background-color: #0a1f3a; }
+    .color-darkpurple { background-color: #2a0a3a; }
+
+    .card p {
+      text-align: center;
+      font-size: 0.95em;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-pattern"></div>
+
+  <h1 class="title">Apa Aja Yang F Tau Tentangmu?</h1>
+
+  <div class="card">
+    <h2>Lagu Favorit</h2>
+    <div class="scroll-container">
+      <img src="foto/lagu1.png" alt="Lagu Favorit 1">
+      <img src="foto/lagu2.png" alt="Lagu Favorit 2">
+      <img src="foto/lagu3.png" alt="Lagu Favorit 3">
+      <img src="foto/lagu4.png" alt="Lagu Favorit 4">
+    </div>
+    <p>Meski penampilannya kalem, lagu favoritnya malah penuh energi dan garang. Kadang bikin orang kaget pas tau playlist kamu lebih keras dari ekspresi wajahmu!</p>
+  </div>
+
+  <div class="card">
+    <h2>Warna Favorit</h2>
+    <div class="color-swatches">
+      <div class="color-black"></div>
+      <div class="color-gray"></div>
+      <div class="color-redwine"></div>
+      <div class="color-darkbrown"></div>
+      <div class="color-darkblue"></div>
+      <div class="color-darkpurple"></div>
+    </div>
+    <p>Warna-warna ini simpel tapi punya makna dalam. Kadang nggak mencolok, tapi justru itulah yang bikin nyaman dipandang dan nggak pernah bikin bosan.</p>
+  </div>
+
+</body>
+</html>
