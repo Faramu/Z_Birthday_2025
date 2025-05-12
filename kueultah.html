@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kue Ulang Tahunmu</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Pacifico', cursive;
+      font-family: 'Quicksand', sans-serif;
       background-color: #cce3f7;
       display: flex;
       flex-direction: column;
@@ -20,12 +24,12 @@
     }
 
     .background-pattern {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('foto/bghias.png'); /* Gambar transparan hiasan */
+      background-image: url('foto/bghias.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -36,8 +40,10 @@
 
     .title {
       margin-top: 30px;
-      font-size: 2em;
-      color: #000;
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      color: #ff69b4;
+      text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.3);
       z-index: 2;
     }
 
@@ -48,6 +54,7 @@
       margin: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       z-index: 2;
+      position: relative;
     }
 
     .cake-container img {
@@ -61,13 +68,203 @@
       border-radius: 15px;
       padding: 15px 20px;
       margin: 10px 20px;
-      text-align: center;
-      font-family: sans-serif;
-      font-size: 0.9em;
-      color: #333;
+      text-align: justify;
+      font-size: 15px;
+      color: #444;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      max-width: 400px;
       z-index: 2;
     }
+
+    .btn-ultah {
+      margin-top: 15px;
+      background: #87cefa;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .btn-ultah:hover {
+      background: #63bde3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .panda-right {
+      position: absolute;
+      top: 30%;
+      right: -1900px;
+      transform: translateY(-50%);
+      width: 100px;
+      animation: slideInRight 9s infinite ease-in-out;
+      z-index: 3;
+    }
+
+    @keyframes slideInRight {
+      0% { right: -100px; opacity: 0; }
+      20% { right: -50px; opacity: 1; }
+      50% { right: -50px; opacity: 1; }
+      80% { right: -100px; opacity: 0; }
+      100% { right: -100px; opacity: 0; }
+    }
+
+    .layer {
+      height: 40px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      position: relative;
+      box-shadow: inset 0 -4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .layer-top { width: 120px; background-color: #ffb6c1; margin-left: 20px; }
+    .layer-middle { width: 140px; background-color: #ffb6c1; margin-left: 10px; }
+    .layer-bottom { width: 160px; background-color: #ffb6c1; margin-left: 0; }
+
+    .drip {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 15px;
+      background: white;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 12px;
+      z-index: 2;
+    }
+
+    .dots span {
+      width: 10px;
+      height: 10px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .candle {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 50px;
+      background: #ffcc00;
+      border-radius: 2px;
+      box-shadow: inset 0 -3px #d4aa00;
+      z-index: 5;
+    }
+
+    .flame {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 18px;
+      background: gold;
+      border-radius: 50%;
+      box-shadow: 0 0 15px gold;
+      animation: flicker 0.3s infinite;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+
+    .smoke {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 40px;
+      background: rgba(200, 200, 200, 0.6);
+      border-radius: 50%;
+      animation: smokeUp 2.5s ease-out forwards;
+      z-index: 4;
+      opacity: 0.8;
+    }
+
+    @keyframes smokeUp {
+      0% {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateX(-50%) translateY(-50px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .blow-candle-button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-family: 'Pacifico', cursive;
+      font-size: 18px;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .blow-candle-button:hover {
+      background-color: #e754a2;
+      transform: scale(1.05);
+    }
+
+    .confetti {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      animation: confettiAnimation 3s forwards;
+    }
+
+    @keyframes confettiAnimation {
+      0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      100% { transform: translateX(-50%) translateY(200px) rotate(720deg); opacity: 0; }
+    }
+
+    .birthday-message {
+      margin-top: 20px;
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      color: #d6336c;
+      font-weight: bold;
+      display: none;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -75,14 +272,87 @@
   <div class="background-pattern"></div>
 
   <h1 class="title">Kue Ulang Tahunmu</h1>
-
+<br>
+<br>
   <div class="cake-container">
-    <img src="foto/kue.png" alt="Kue Ulang Tahun">
+    <!-- Lapisan Kue -->
+    <div class="layer layer-top">
+      <div class="drip"></div>
+      <div class="candle">
+        <div class="flame" id="flame"></div>
+        <!-- Asap akan dimasukkan lewat JS -->
+      </div>
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="layer layer-middle">
+      <div class="drip"></div>
+      <div class="dots"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="layer layer-bottom">
+      <div class="drip"></div>
+      <div class="dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
   </div>
 
+  <div class="birthday-message" id="birthdayMessage">Selamat Ulang Tahun! 🎉</div>
+  <button class="blow-candle-button" onclick="tiupLilin()">Tiup Lilin ✨</button>
   <div class="text-card">
-    Kue ulang tahun jadi simbol manis dalam perayaan, karena di setiap potongannya tersimpan doa, harapan, dan kebahagiaan untuk orang yang sedang berulang tahun. Rasanya nggak lengkap kalau ngerayain tanpa kue, karena momen tiup lilin dan potong kue itu jadi tanda dimulainya babak baru dalam hidup dengan penuh suka cita!
+    Kue ulang tahun jadi simbol manis dalam perayaan, karena di setiap potongannya tersimpan doa, harapan, dan kebahagiaan untuk orang yang sedang berulang tahun.
   </div>
+
+  <a href="kartu.html" class="btn-ultah">X</a>
+  <img src="foto/pandais.png" alt="Panda Ngintip" class="panda-right">
+
+  <script>
+    let sudahTiup = false;
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function tiupLilin() {
+      if (sudahTiup) return;
+      sudahTiup = true;
+
+      // Hilangkan api
+      document.getElementById("flame").style.display = "none";
+
+      // Tampilkan pesan ulang tahun
+      document.getElementById("birthdayMessage").style.display = "block";
+
+      // Tambahkan asap
+      const candle = document.querySelector(".candle");
+      const smoke = document.createElement("div");
+      smoke.className = "smoke";
+      candle.appendChild(smoke);
+
+      // Hapus asap setelah selesai
+      smoke.addEventListener("animationend", () => {
+        smoke.remove();
+      });
+
+      // Confetti
+      for (let i = 0; i < 200; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = `${getRandomInt(0, 100)}%`;
+        const colors = ["#ff69b4", "#87cefa", "#ffd700", "#98fb98", "#ff4500"];
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        const size = getRandomInt(5, 10);
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+        confetti.style.animationDuration = `${getRandomInt(3, 5)}s`;
+
+        document.body.appendChild(confetti);
+
+        confetti.addEventListener("animationend", () => {
+          confetti.remove();
+        });
+      }
+    }
+  </script>
 
 </body>
 </html>

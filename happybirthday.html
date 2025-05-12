@@ -1,111 +1,135 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Happy Birthday</title>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2&display=swap" rel="stylesheet">
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: 'Pacifico', cursive;
-                background-color: #cce3f7;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                height: 100vh;
-                overflow: hidden;
-                position: relative;
-            }
-    
-            .background-pattern {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('foto/image.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                opacity: 0.7;
-                pointer-events: none;
-                z-index: 0;
-            }
-    
-            h1 {
-                margin: 0 0 20px;
-                font-size: 36px;
-                color: #d81d5b;
-                z-index: 1;
-            }
-    
-            .card {
-                background: linear-gradient(135deg, #ffffff, #dfa3ab);
-                padding: 25px 35px;
-                border-radius: 30px 10px 30px 10px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-                max-width: 380px;
-                text-align: center;
-                transform: rotate(-2deg);
-                transition: transform 0.3s ease;
-                z-index: 1;
-                font-family: 'Baloo 2', cursive;
-            }
-            .card:hover {
-                transform: rotate(2deg) scale(1.02);
-            }
-            .card p {
-                font-size: 14px;
-                line-height: 1.8;
-                color: #4a4a4a;
-                text-align: justify;
-            }
-    
-            .flowers {
-                position: absolute;
-                bottom: -20px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                pointer-events: none;
-                gap: 0;
-                z-index: 1;
-            }
-            .flowers img {
-                width: 50px;
-                margin: -10px;
-                animation: float 3s infinite ease-in-out;
-            }
-            @keyframes float {
-                0% { transform: translateY(0) rotate(0deg); }
-                50% { transform: translateY(-15px) rotate(10deg); }
-                100% { transform: translateY(0) rotate(0deg); }
-            }
-    
-            .panda {
-                position: absolute;
-                top: -60px;
-                left: 80%;
-                transform: translateX(-50%);
-                width: 120px;
-                animation: slideDown 20s infinite ease-in-out;
-                z-index: 10;
-            }
-            @keyframes slideDown {
-                0% { transform: translate(-50%, -100px); }
-                50% { transform: translate(-50%, 20px); }
-                100% { transform: translate(-50%, -100px); }
-            }
-        </style>
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat 20 Tahun</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: transparent;
+        }
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('foto/bghias.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9;
+            z-index: 0;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.4);
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 360px;
+            text-align: center;
+            z-index: 1;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            text-align: justify;
+        }
+
+        .flowers {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            pointer-events: none;
+            gap: 0;
+            z-index: 1;
+        }
+
+        .flowers img {
+            width: 50px;
+            margin: -10px;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .panda {
+            position: absolute;
+            top: -60px;
+            left: 80%;
+            transform: translateX(-50%);
+            width: 120px;
+            animation: slideDown 20s infinite ease-in-out;
+            z-index: 10;
+        }
+
+        @keyframes slideDown {
+            0% { transform: translate(-50%, -100px); }
+            50% { transform: translate(-50%, 20px); }
+            100% { transform: translate(-50%, -100px); }
+        }
+        .btn-ultah {
+    margin-top: 20px;
+    background: #87cefa;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    z-index: 2; /* tambah z-index supaya di atas background */
+    position: relative;
+}
+
+.btn-ultah:hover {
+    background: #63bde3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
 <body>
 
-    <!-- Layer background gambar transparan -->
     <div class="background-pattern"></div>
 
     <h1>Happy Birthday</h1>
@@ -123,23 +147,10 @@
         </p>
     </div>
 
-    <div class="flowers">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-        <img src="foto/bunga1.png" alt="Bunga">
-    </div>
+    <a href="kartu.html" class="btn-ultah">X</a>
 
     <img src="foto/pandai.png" alt="Panda Ngantip" class="panda">
 
 </body>
+
 </html>

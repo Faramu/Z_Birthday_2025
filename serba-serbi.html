@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lain Lain - Cerita Ulang Tahun</title>
+  <title>Hal Lainnya</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 20px 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #cce3f7;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow-x: hidden;
       position: relative;
     }
 
     .background-pattern {
-      position: absolute;
-      bottom: 0;
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
-      height: 40%;
+      height: 100%;
       background-image: url('foto/bghias.png');
       background-size: cover;
       background-repeat: no-repeat;
@@ -34,85 +36,251 @@
     }
 
     .title {
+      margin: 30px 20px 10px;
       font-family: 'Pacifico', cursive;
       font-size: 2.2em;
       color: #000;
-      margin: 20px 10px;
       text-align: center;
+      z-index: 2;
+      word-wrap: break-word;
+    }
+
+    .section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .label {
+      background: white;
+      border-radius: 15px;
+      padding: 8px 16px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1em;
+      color: #000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
       z-index: 2;
     }
 
-    .content-section {
-      display: grid;
-      gap: 20px;
-      padding: 0 20px;
-      z-index: 2;
-      width: 100%;
-      max-width: 400px;
+    .label.left {
+      align-self: flex-start;
+      margin-left: 20px;
+    }
+
+    .label.right {
+      align-self: flex-end;
+      margin-right: 20px;
     }
 
     .card {
       background: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 0 20px 20px;
+      width: 85%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 2;
     }
 
-    .card h2 {
-      font-family: 'Fredoka', sans-serif;
-      margin-bottom: 10px;
-      color: #000;
-      font-size: 1.3em;
-    }
-
-    .image-row {
+    .scroll-container {
       display: flex;
-      justify-content: center;
+      overflow-x: auto;
       gap: 10px;
-      flex-wrap: wrap;
-      margin: 10px 0;
+      padding-bottom: 10px;
     }
 
-    .image-row img {
-      width: 100px;
+    .scroll-container img {
+      width: 120px;
       border-radius: 10px;
+      flex-shrink: 0;
     }
+
+    .color-swatches {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .color-swatches div {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .color-black { background-color: #000000; }
+    .color-gray { background-color: #7a7a7a; }
+    .color-redwine { background-color: #6c2d3b; }
+    .color-darkbrown { background-color: #3a1f0a; }
+    .color-darkblue { background-color: #0a1f3a; }
+    .color-darkpurple { background-color: #2a0a3a; }
 
     .card p {
-      font-size: 0.95em;
+      text-align: center;
+      font-size: 0.9em;
       font-family: 'Poppins', sans-serif;
       color: #333;
+      margin-top: 10px;
     }
+
+    .desc-display {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ffffffcc;
+  border-radius: 10px;
+  font-size: 0.85em;
+  color: #333;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 85%;
+}
+
   </style>
 </head>
 <body>
 
   <div class="background-pattern"></div>
 
-  <h1 class="title">Halaman Lainnya yang Lebih Personal</h1>
+  <h1 class="title">Hal Random Lainnya</h1>
 
-  <div class="content-section">
+  <div class="section">
+    <div class="label right">Kapan Dimulai?</div>
     <div class="card">
-      <h2>Hobi Unik</h2>
-      <div class="image-row">
-        <img src="foto/hobi1.png" alt="Hobi 1">
-      </div>
-      <p>Ternyata hobi kamu tuh out of the box! Dari luar nggak kelihatan, tapi setelah kenal lebih dekat, bikin orang geleng-geleng kepala.</p>
-    </div>
-
-    <div class="card">
-      <h2>Kebiasaan Lucu</h2>
-      <div class="image-row">
-        <img src="foto/kebiasaan1.png" alt="Kebiasaan 1">
-        <img src="foto/kebiasaan1.png" alt="Kebiasaan 1">
-      </div>
-      <p>Kebiasaan kecil ini bikin orang sekitar senyum-senyum sendiri. Simple, tapi bikin suasana jadi lebih hidup.</p>
+      <p>Project nya dimulai tanggal 13 April, waktu itu F nanyain warna kesukaan mu buat tema warna project ini.</p>
     </div>
   </div>
+
+  <div class="section">
+    <div class="label left">Dokumentasi</div>
+    <div class="card">
+      <div class="scroll-container">
+        <div class="image-wrapper">
+          <img src="foto/f1.jpg" alt="Dokumentasi 1">
+          <div class="date-card">17 April 2025</div>
+        </div>
+        <div class="image-wrapper">
+          <img src="foto/d3.png" alt="Dokumentasi 3">
+          <div class="date-card">17 April 2025</div>
+        </div>
+        <div class="image-wrapper">
+          <img src="foto/d1.png" alt="Dokumentasi 2">
+          <div class="date-card">22 April 2025</div>
+        </div>
+        <div class="image-wrapper">
+          <img src="foto/d4.png" alt="Dokumentasi 3">
+          <div class="date-card">22 April 2025</div>
+        </div>
+      </div>
+      <p>Momen-momen F pas buat project ini, pasti ada foto yang pernah kamu liat kan.</p>
+    </div>
+  </div>
+  
+  
+
+  <div class="section">
+    <div class="label right">Panda Ngapain?</div>
+    <div class="card">
+      <div class="scroll-container">
+        <img src="foto/pandait.jpg" alt="Lagu Favorit 1">
+        <img src="foto/pandais.png" alt="Lagu Favorit 1">
+        <img src="foto/pandam.jpg" alt="Lagu Favorit 1">
+      </div>
+      <p>Sadar ga kalau di beberapa halaman ada panda yang nongol? Itu easter egg yang sengaja F buat, anggap aja itu F yang penasaran sama reaksi kamu pas ngeliat project ini, jadi nanti kalau udah selesai eksplorasinya jangan lupa kasih tau ya pendapatmu ke F.</p>
+    </div>
+  </div>
+
+   <div class="section">
+    <div class="label left">Revisi</div>
+    <div class="card">
+      <div class="scroll-container" id="revisi-container">
+        
+  <div class="image-wrapper">
+    <img src="foto/r4.png" alt="Dokumentasi 3" data-desc="Awalnya project ini cuma ada kartu ucapan ultah doang, kureng bangetttt.">
+  </div>
+  <div class="image-wrapper">
+    <img src="foto/r5.png" alt="Dokumentasi 3" data-desc="F mulai nambahin elemen yang relate dengan ultah, setiap elemen punya isinya masing masing.">
+  </div>
+  <div class="image-wrapper">
+    <img src="foto/r1.png" alt="Dokumentasi 1" data-desc="Tampilan awal kue ultah cuma gambar kue ulang tahun doang, ga ada efek apapun.">
+  </div>
+  <div class="image-wrapper">
+    <img src="foto/r2.png" alt="Dokumentasi 2" data-desc="Ini adalah animasi kuenya, masih belum rapih.">
+  </div>
+  <div class="image-wrapper">
+    <img src="foto/r3.png" alt="Dokumentasi 3" data-desc="Ini hasil akhirnyaa.">
+  </div>
+</div>
+<div class="desc-display" id="desc-display">Klik gambar di atas buat lihat deskripsinya, setiap gambar punya cerita loh ka.</div>
+      <p>Ga ada project yang langsung jadi tanpa revisi, sama halnya kaya waktu pembuatan project ini, nih F rangkum apa aja yang berubah.</p>
+    </div>
+  </div>
+  <a href="kartu.html" class="btn-ultah">X</a>
+  
+  <script>
+  const revisiContainer = document.getElementById("revisi-container");
+  const descDisplay = document.getElementById("desc-display");
+
+  revisiContainer.addEventListener("click", function (e) {
+    if (e.target.tagName === "IMG") {
+      const desc = e.target.getAttribute("data-desc");
+      descDisplay.textContent = desc;
+    }
+  });
+</script>
+
+<style>
+  .btn-ultah {
+    margin-top: 20px;
+    background: #87cefa;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    z-index: 2;
+    position: relative;
+  }
+
+  .btn-ultah:hover {
+    background: #63bde3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.image-wrapper img {
+  width: 120px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.date-card {
+  background: #f0f8ff;
+  border: 1px solid #cce;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+</style>
+
 
 </body>
 </html>
